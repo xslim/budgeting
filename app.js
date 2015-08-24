@@ -1,4 +1,4 @@
-var version = "0.1.6";
+var version = "0.1.7";
 var expenses = { }
 var matches_reg = {}
 var expenses_detail = {}
@@ -104,7 +104,7 @@ function showTxData(expenses, expenses_detail) {
     
     body = '';
     for (var key in expenses_detail) {
-        body += expDetailTable(key, expenses_detail[key]);
+        body += expDetailTable(key, expenses_detail[key], expenses);
     }
     $("#txDetails").html(body)
     
