@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+
     <title>Budgeting</title>
 
     <!-- Bootstrap CSS -->
@@ -20,9 +20,9 @@
     <div class="container">
       <h1>Budgeting</h1>
       <i id="version"></i><br />
-      
+
       <div id="tx_input">
-        
+
         Matches url: <input type="text" id="matches_url" name="matches_url" value="http://kalapun.com/budgeting/matches.json" style="width: 100%" />
         <!--
         <input type="file" id="tx_file" name="file" />
@@ -36,7 +36,7 @@
         <input id="loadTxBtn" type="submit" class="btn btn-primary" />
       </div>
       <button id="showInputTxBtn" class="btn btn-primary">Again</button>
-      
+
         <div class="modal fade" id="catDetailModal" tabindex="-1" role="dialog" aria-labelledby="catDetailModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -53,22 +53,23 @@
             </div>
           </div>
         </div>
-      
 
-      
+
+
       <div id="results">
-          
+
           <h2>Summary</h2>
           <div id="txSummary">
           </div>
-          
+
       </div>
-  
+
     </div> <!-- /container -->
-    
+
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="budgeting.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
