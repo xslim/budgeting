@@ -52,19 +52,17 @@ function parseData(allText) {
 }
 
 function expTable(data) {
-    var amount = data[0];
-    var desc = data[1];
     var body = '';
-
-    body += '<table class="table">'
-    body += '<thead><tr>'
-    body += '<th>Amount</th><th>Description</th>'
-    body += '</tr></thead><tbody>'
-    body += '<tr>'
-    body += '<td>'+ amount +'</td>'
-    body += '<td>'+ desc +'</td>'
-    body += '</tr>'
+    body += '<table class="table"><tbody>'
+    for (var key in data) {
+      var amount = data[key];
+      body += '<tr>'
+      body += '<td>'+ amount +'</td>'
+      body += '<td>'+ key +'</td>'
+      body += '</tr>'
+    }
     body += '</tbody></table>'
+    
     return body;
 }
 
@@ -72,18 +70,21 @@ function expDetailTable(title, data) {
     var body = '';
    
     body += '<h3>' + title + '</h3>'
-    body += '<table class="table"><tbody>'
-
+    body += '<table class="table">'
+    body += '<thead><tr>'
+    body += '<th>Amount</th><th>Description</th>'
+    body += '</tr></thead><tbody>'
+   
     for (var i=1; i<data.length; i++) {
-        var amount = data[i][0];
-        var desc   = data[i][1];
-        body += '<tr>'
-        body += '<th>'+ amount +'</th>'
-        body += '<td>'+ desc +'</td>'
-        body += '</tr>'
+      var amount = data[i][0];
+      var desc   = data[i][1];
+      body += '<tr>'
+      body += '<td>'+ amount +'</td>'
+      body += '<td>'+ desc +'</td>'
+      body += '</tr>'
     }
-    
     body += '</tbody></table>'
+    
     return body;
 }
 
