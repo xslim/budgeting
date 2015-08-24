@@ -91,13 +91,13 @@ function showTxData(expenses, expenses_detail) {
     var body = '';
     
     body = expTable(expenses);
-    $("#txSummary").replaceWith(body)
+    $("#txSummary").html(body)
     
     body = '';
     for (var key in expenses_detail) {
         body += expDetailTable(key, expenses_detail[key]);
     }
-    $("#txDetails").replaceWith(body)
+    $("#txDetails").html(body)
     
     $("#results").show();
 }
