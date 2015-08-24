@@ -9,7 +9,8 @@
   ],
   "food": [
     "ALBERT HEIJN",
-    "Jumbo Foodmarkt"
+    "Jumbo Foodmarkt",
+    "DIRK VDBROEK"
   ],
   "transportation": [
     "OV-chipkaart"
@@ -19,7 +20,10 @@
     "KNMV VERZ",
     "Parkmobile parkeren",
     "Esso van Hasselt",
-    "Star Noord Autom"
+    "BP Nieuwe Hemweg",
+    "Star Noord Autom",
+    "CCV\\*101 MOTOREN",
+    "Unigarant"
   ],
   "services": [
     "Prive pakket",
@@ -29,10 +33,22 @@
     "Centraal Beheer",
     "OHRA Zorgverzekeringen",
     "BELASTINGDIENST",
-    "Marktplaats BV"
+    "Marktplaats BV",
+    "MARKTPLAATS\\.NL",
+    "CCV\\*SERVICEPOINT CS"
+  ],
+  "housing": [
+    "OXXIO NEDERLAND",
+    "VvE \\(1193\\) de Zilvermeeuw",
+    "Online\\.nl",
+    "Gemeente Amsterdam Belastingen",
+    "WATERNET DRINKWATER",
+    "WATERNET",
+    "Gilmar Barboza"
   ],
   "travel": [
-
+    "DB Bahn Automaten",
+    "INNSBR NORDKETTENBAHNE"
   ],
   "eatingout": [
     "Pathe City",
@@ -51,20 +67,25 @@
     "VOF DE TOLHUISTUIN",
     "Manti Filiz",
     "PIPPERS B\\.V\\.",
-    "AH togo"
-  ],
-  "housing": [
-    "OXXIO NEDERLAND",
-    "VvE \\(1193\\) de Zilvermeeuw",
-    "Online\\.nl",
-    "Gemeente Amsterdam Belastingen",
-    "WATERNET DRINKWATER",
-    "Gilmar Barboza"
+    "AH togo",
+    "AH to go",
+    "HILTON DOUBLETREE",
+    "Noodlebar",
+    "McDonald's",
+    "Sea You B\\.V\\.",
+    "ATATURK HL",
+    "COFFEE FELLOWS",
+    "Sportler Alpin",
+    "KAPALICARSI SUBE"
   ],
   "shopping": [
     "PayPal",
     "MM Amsterdam Centrum",
-    "NikeEMEA"
+    "NikeEMEA",
+    "Bijenkorf",
+    "We Men",
+    "MANGO AMS",
+    "APPLE STORE"
   ],
   "other": [
     "Karwei",
@@ -75,6 +96,8 @@
     "Overboeking van creditcard",
     "NL86ABNA0615823300",
     "NL96ABNA0610861085",
+    "NL86ABNA0561854343",
+    "NL26INGB0003778090",
     "Termijnbetaling hypotheek",
     "TAXI INAN"
   ],
