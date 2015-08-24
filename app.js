@@ -1,7 +1,7 @@
-var version = "0.1.7";
-var expenses = { }
-var matches_reg = {}
-var expenses_detail = {}
+var version = "0.1.8";
+var expenses = {};
+var matches_reg = {};
+var expenses_detail = {};
 
 function fill_expense(key, amount, desc) {
   amount = Math.abs(amount);
@@ -54,44 +54,46 @@ function parseData(allText) {
 
 function expTable(data) {
     var body = '';
-    body += '<table class="table"><tbody>'
+    body += '<table class="table"><tbody>';
     for (var key in data) {
       var amount = data[key];
-      body += '<tr>'
-      body += '<td>'+ amount +'</td>'
-      body += '<td>'+ key +'</td>'
-      body += '</tr>'
+      body += '<tr>';
+      body += '<td>'+ amount +'</td>';
+      body += '<td><a href="#" data-toggle="modal" data-target="#catDetailModal" data-cat="'+key+'">'+ key +'</a></td>';
+      body += '</tr>';
     }
-    body += '</tbody></table>'
+    body += '</tbody></table>';
     
     return body;
+}
+
+function updateCatModal(modal, key) {
+	var content = expDetailTable(key, expenses_detail[key], expenses);
+    modal.find('.modal-title').text(key);
+    modal.find('.modal-body').html(content);
 }
 
 function expDetailTable(key, data, totals) {
     var body = '';
     
-    //console.log(data);
-   
-    body += '<h3>' + key + '</h3>'
-    
     if (totals && totals[key]) {
-    	body += '<i>' + totals[key] + '</i>'
+    	body += '<i>Total: ' + totals[key] + '</i>';
     }
     
-    body += '<table class="table">'
-    body += '<thead><tr>'
-    body += '<th>Amount</th><th>Description</th>'
-    body += '</tr></thead><tbody>'
+    body += '<table class="table">';
+    body += '<thead><tr>';
+    body += '<th>Amount</th><th>Description</th>';
+    body += '</tr></thead><tbody>';
    
     for (var i=0; i<data.length; i++) {
       var amount = data[i][0];
       var desc   = data[i][1];
-      body += '<tr>'
-      body += '<td>'+ amount +'</td>'
-      body += '<td>'+ desc +'</td>'
-      body += '</tr>'
+      body += '<tr>';
+      body += '<td>'+ amount +'</td>';
+      body += '<td>'+ desc +'</td>';
+      body += '</tr>';
     }
-    body += '</tbody></table>'
+    body += '</tbody></table>';
     
     return body;
 }
@@ -100,13 +102,8 @@ function showTxData(expenses, expenses_detail) {
     var body = '';
     
     body = expTable(expenses);
-    $("#txSummary").html(body)
-    
-    body = '';
-    for (var key in expenses_detail) {
-        body += expDetailTable(key, expenses_detail[key], expenses);
-    }
-    $("#txDetails").html(body)
+    $("#txSummary").html(body);
+
     
     $("#results").show();
 }
@@ -116,9 +113,10 @@ function processTx() {
     var matches_url = $("#matches_url").val();
     $.getJSON(matches_url, function( matches ) {
         for (var key in matches) {
-  			expenses[key] = 0.0;
-  			if (matches[key].length > 0)
-                matches_reg[key] = new RegExp(matches[key].join("|"), "i")
+  			expenses[key] = 0;
+  			if (matches[key].length > 0) {
+                matches_reg[key] = new RegExp(matches[key].join("|"), "i");
+            }
 		}
         
         var data = $("#tx_text").val();
@@ -144,6 +142,13 @@ $( document ).ready(function() {
       processTx();
     });
     $("#version").html("v"+version);
+    $('#catDetailModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var key = button.data('cat');
+      var modal = $(this);
+	  updateCatModal(modal, key);
+    })
     console.log("v"+version);
 });
+
 
