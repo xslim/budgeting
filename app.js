@@ -51,11 +51,11 @@ function parseData(allText) {
   }
 }
 
-function expTable(title, data) {
+function expTable(data) {
     var amount = data[0];
     var desc = data[1];
     var body = '';
-    body += '<h3>' + title + '</h3>'
+
     body += '<table class="table">'
     body += '<thead><tr>'
     body += '<th>Amount</th><th>Description</th>'
@@ -90,7 +90,7 @@ function expDetailTable(title, data) {
 function showTxData(expenses, expenses_detail) {
     var body = '';
     
-    body = expDetailTable('Expenses', expenses);
+    body = expTable(expenses);
     $("#txSummary").replaceWith(body)
     
     body = '';
