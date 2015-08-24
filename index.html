@@ -12,27 +12,30 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
   </head>
   <body>
-    <h1>Budgeting</h1>
+    <div class="container">
+      <h1>Budgeting</h1>
+      
+      <div id="tx_input">
+        <input type="text" id="matches_url" name="matches_url"value="http://kalapun.com/budgeting/matches.json" />
+        <input type="file" id="tx_file" name="file" />
+        <!--<div id="drop_zone">Drop files here</div>-->
+        <textarea class="form-control" id="tx_text" rows="3"></textarea>
+        <input id="loadTxBtn" type="submit" class="btn btn-primary" />
+      </div>
+      <button id="showInputTxBtn" class="btn btn-primary">Again</button>
+      
+      <div id="results">
+          
+          <div id="txSummary" class="table">
+          </div>
+          
+          <div id="txDetails" class="table">
+          </div>
+          
+      </div>
+  
+    </div> <!-- /container -->
     
-    <div id="tx_input">
-      <input type="text" id="matches_url" name="matches_url"value="http://kalapun.com/budgeting/matches.json" />
-      <input type="file" id="tx_file" name="file" />
-      <!--<div id="drop_zone">Drop files here</div>-->
-      <textarea class="form-control" id="tx_text" rows="3"></textarea>
-      <input id="loadTxBtn" type="submit" class="btn btn-primary" />
-    </div>
-    <button id="showInputTxBtn" class="btn btn-primary">Again</button>
-    
-    <div id="results">
-        
-        <div id="txSummary" class="table">
-        </div>
-        
-        <div id="txDetails" class="table">
-        </div>
-        
-    </div>
-
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
