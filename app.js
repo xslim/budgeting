@@ -138,6 +138,7 @@ $( document ).ready(function() {
       $("#showInputTxBtn").show();
       processTx();
     });
-    console.log("v: "+version);
+    $("#version").html("v"+version);
+    console.log("v"+version);
 });
 
