@@ -1,4 +1,4 @@
-var version = "0.1.5";
+var version = "0.1.6";
 var expenses = { }
 var matches_reg = {}
 var expenses_detail = {}
@@ -67,12 +67,17 @@ function expTable(data) {
     return body;
 }
 
-function expDetailTable(title, data) {
+function expDetailTable(key, data, totals) {
     var body = '';
     
     //console.log(data);
    
-    body += '<h3>' + title + '</h3>'
+    body += '<h3>' + key + '</h3>'
+    
+    if (totals && totals[key]) {
+    	body += '<i>' + totals[key] + '</i>'
+    }
+    
     body += '<table class="table">'
     body += '<thead><tr>'
     body += '<th>Amount</th><th>Description</th>'
