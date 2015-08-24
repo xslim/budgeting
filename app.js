@@ -1,4 +1,4 @@
-var version = "0.1.4";
+var version = "0.1.5";
 var expenses = { }
 var matches_reg = {}
 var expenses_detail = {}
@@ -46,7 +46,7 @@ function parseData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var lines = [];
 
-  for (var i=1; i<allTextLines.length; i++) {
+  for (var i=0; i<allTextLines.length; i++) {
     var data = allTextLines[i].split("\t");
     parse_data_line(data);
   }
@@ -70,7 +70,7 @@ function expTable(data) {
 function expDetailTable(title, data) {
     var body = '';
     
-    console.log(data);
+    //console.log(data);
    
     body += '<h3>' + title + '</h3>'
     body += '<table class="table">'
@@ -78,7 +78,7 @@ function expDetailTable(title, data) {
     body += '<th>Amount</th><th>Description</th>'
     body += '</tr></thead><tbody>'
    
-    for (var i=1; i<data.length; i++) {
+    for (var i=0; i<data.length; i++) {
       var amount = data[i][0];
       var desc   = data[i][1];
       body += '<tr>'
