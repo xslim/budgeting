@@ -3,12 +3,12 @@ var matches_reg = {}
 var expenses_detail = {}
 
 function fill_expense(key, amount, desc) {
-    amount = Math.abs(amount);
-	var total = +(expenses[key] + amount).toFixed(2);
-    expenses[key] = total;
+  amount = Math.abs(amount);
+  var total = +(expenses[key] + amount).toFixed(2);
+  expenses[key] = total;
     
-    if (!expenses_detail[key]) expenses_detail[key] = [];
-    expenses_detail[key].push([amount,  desc]);
+  if (!expenses_detail[key]) expenses_detail[key] = [];
+  expenses_detail[key].push([amount,  desc]);
 }
 
 function parse_data_line(line) {
@@ -32,8 +32,8 @@ function parse_data_line(line) {
   for (var key in matches_reg) {
     var match = desc.match(matches_reg[key]);
     if (match != null) {
-        fill_expense(key, amount, match[0]);
-		return;
+      fill_expense(key, amount, match[0]);
+      return;
     }
   }
 
@@ -42,13 +42,13 @@ function parse_data_line(line) {
 }
 
 function parseData(allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
-	var lines = [];
+  var allTextLines = allText.split(/\r\n|\n/);
+  var lines = [];
 
-    for (var i=1; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split("\t");
-		parse_data_line(data);
-    }
+  for (var i=1; i<allTextLines.length; i++) {
+    var data = allTextLines[i].split("\t");
+    parse_data_line(data);
+  }
 }
 
 function expTable(title, data) {
@@ -70,8 +70,7 @@ function expTable(title, data) {
 
 function expDetailTable(title, data) {
     var body = '';
-    console.log(data)
-    
+   
     body += '<h3>' + title + '</h3>'
     body += '<table class="table"><tbody>'
 
