@@ -1,3 +1,4 @@
+var version = "0.1.4";
 var expenses = { }
 var matches_reg = {}
 var expenses_detail = {}
@@ -137,5 +138,6 @@ $( document ).ready(function() {
       $("#showInputTxBtn").show();
       processTx();
     });
+    console.log("v: "+version);
 });
 
