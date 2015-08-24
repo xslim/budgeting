@@ -1,4 +1,4 @@
-var version = "0.1.8";
+var version = "0.1.9";
 var expenses = {};
 var matches_reg = {};
 var expenses_detail = {};
@@ -67,19 +67,10 @@ function expTable(data) {
     return body;
 }
 
-function updateCatModal(modal, key) {
-	var content = expDetailTable(key, expenses_detail[key], expenses);
-    modal.find('.modal-title').text(key);
-    modal.find('.modal-body').html(content);
-}
-
-function expDetailTable(key, data, totals) {
+function expDetailTable(key, data) {
+    if (!key || !data) return '';
+    
     var body = '';
-    
-    if (totals && totals[key]) {
-    	body += '<i>Total: ' + totals[key] + '</i>';
-    }
-    
     body += '<table class="table">';
     body += '<thead><tr>';
     body += '<th>Amount</th><th>Description</th>';
@@ -103,9 +94,18 @@ function showTxData(expenses, expenses_detail) {
     
     body = expTable(expenses);
     $("#txSummary").html(body);
-
-    
     $("#results").show();
+}
+
+function updateCatModal(modal, key) {
+	var content = expDetailTable(key, expenses_detail[key]);
+        
+    var total = expenses[key];
+    if (!total || total == 0) total = '';
+    
+    modal.find('.modal-title').text(key);
+    modal.find('#catDetailTotalLabel').text(total);
+    modal.find('.modal-body').html(content);
 }
 
 function processTx() {
