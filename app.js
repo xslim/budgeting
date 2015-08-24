@@ -68,6 +68,8 @@ function expTable(data) {
 
 function expDetailTable(title, data) {
     var body = '';
+    
+    console.log(data);
    
     body += '<h3>' + title + '</h3>'
     body += '<table class="table">'
