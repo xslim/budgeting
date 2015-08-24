@@ -1,0 +1,83 @@
+{
+  "incoming": [],
+  "investment": [
+    "Registration DEGIRO",
+    "Cash Order DEGIRO"
+  ],
+  "creditcard": [
+    "INT CARD SERVICES"
+  ],
+  "food": [
+    "ALBERT HEIJN",
+    "Jumbo Foodmarkt"
+  ],
+  "transportation": [
+    "OV-chipkaart"
+  ],
+  "car": [
+    "GREENWHEELS",
+    "KNMV VERZ",
+    "Parkmobile parkeren",
+    "Esso van Hasselt",
+    "Star Noord Autom"
+  ],
+  "services": [
+    "Prive pakket",
+    "PROLONGATIE-PREMIE INZAKE",
+    "PAKKETVERZ\\. POLISNR",
+    "T-Mobile",
+    "Centraal Beheer",
+    "OHRA Zorgverzekeringen",
+    "BELASTINGDIENST",
+    "Marktplaats BV"
+  ],
+  "travel": [
+
+  ],
+  "eatingout": [
+    "Pathe City",
+    "Starbucks",
+    "CCV\\*CAFE",
+    "CCV\\*FIER AMSTERDAM",
+    "CCV\\*AL PONTE CAFFE",
+    "CCV\\*THE ENTOURAGE",
+    "CCV\\*FOODHALLEN",
+    "Viet View Foodhallen",
+    "HMSHOST AMSTERDAM",
+    "Cafe Captein",
+    "NYPizza Amsterdam",
+    "Loods 5 Zaandam",
+    "TAKEAWAY COM",
+    "VOF DE TOLHUISTUIN",
+    "Manti Filiz",
+    "PIPPERS B\\.V\\.",
+    "AH togo"
+  ],
+  "housing": [
+    "OXXIO NEDERLAND",
+    "VvE \\(1193\\) de Zilvermeeuw",
+    "Online\\.nl",
+    "Gemeente Amsterdam Belastingen",
+    "WATERNET DRINKWATER",
+    "Gilmar Barboza"
+  ],
+  "shopping": [
+    "PayPal",
+    "MM Amsterdam Centrum",
+    "NikeEMEA"
+  ],
+  "other": [
+    "Karwei",
+    "IKEA BV",
+    "IJZERHANDEL DE VIJL"
+  ],
+  "skip": [
+    "Overboeking van creditcard",
+    "NL86ABNA0615823300",
+    "NL96ABNA0610861085",
+    "Termijnbetaling hypotheek",
+    "TAXI INAN"
+  ],
+
+  "unknown": []
+}
