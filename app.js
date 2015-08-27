@@ -5,6 +5,9 @@ function getYAML(url, callback) {
       yaml: /yaml/
     },
     converters: {
+      "text yaml": function(value){
+        return jsyaml.safeLoad(value);
+      },
     	"yaml json": function(value){
     	  return jsyaml.safeLoad(value);
     	},
@@ -71,8 +74,8 @@ function updateCatModal(modal, key, budget) {
 function processTx(budget) {
   var data = $("#tx_text").val();
   var matches_url = $("#matches_url").val();
-  
-  
+
+
 
   getYAML(matches_url, function( matches ) {
     budget.loadMatches(matches);
