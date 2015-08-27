@@ -1,4 +1,4 @@
-function getJSON(url, callback) {
+function getData(url, callback) {
   request = new XMLHttpRequest();
   request.open('GET', url, true);
   request.onload = function() {
@@ -72,7 +72,8 @@ function processTx(budget) {
   
   
 
-  getJSON(matches_url, function( matches ) {
+  getData(matches_url, function( matches_data ) {
+    var matches = yaml.safeLoad(matches_data);
     budget.loadMatches(matches);
     budget.parseData(data);
     showTxData(budget.expenses);
