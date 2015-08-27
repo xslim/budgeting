@@ -6,7 +6,9 @@ function getYAML(url, callback) {
     	"text html": true, 
     	"text json": jQuery.parseJSON, 
     	"text xml": jQuery.parseXML,
-    	"text yaml": jsyaml.load,
+    	"text yaml": function(value){
+    	  return jsyaml.safeLoad(value);
+    	},
     }
   }).done(function(data) {
     callback(data);
