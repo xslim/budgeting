@@ -1,20 +1,9 @@
 function getYAML(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.onload = function() {
-    if (this.status >= 200 && this.status < 400){
-      // Success!
+  $.get(url, function(data){
       data = yaml.safeLoad(this.response);
       //data = JSON.parse(this.response);
       callback(data);
-    } else {
-      // We reached our target server, but it returned an error
-    }
-  };
-  
-  xhr.onerror = function() {
-    console.log('There was an error!');
-  };
+  })
 }
 
 function expTable(data) {
