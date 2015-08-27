@@ -1,3 +1,16 @@
+function getJSON(url, callback) {
+  request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400){
+      // Success!
+      data = JSON.parse(this.response);
+      callback(data);
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
+
 
 function expTable(data) {
     var body = '';
@@ -56,8 +69,10 @@ function updateCatModal(modal, key, budget) {
 function processTx(budget) {
   var data = $("#tx_text").val();
   var matches_url = $("#matches_url").val();
+  
+  
 
-  $.getJSON(matches_url, function( matches ) {
+  getJSON(matches_url, function( matches ) {
     budget.loadMatches(matches);
     budget.parseData(data);
     showTxData(budget.expenses);
@@ -79,6 +94,7 @@ $( document ).ready(function() {
     });
     $("#loadTxBtn").click( function() {
       $("#tx_input").hide();
+      $("#results").hide();
       $("#showInputTxBtn").show();
       processTx(budget);
     });
