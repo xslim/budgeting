@@ -1,7 +1,7 @@
 function getYAML(url, callback) {
-  request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.onload = function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.onload = function() {
     if (this.status >= 200 && this.status < 400){
       // Success!
       data = yaml.safeLoad(this.response);
@@ -10,6 +10,10 @@ function getYAML(url, callback) {
     } else {
       // We reached our target server, but it returned an error
     }
+  };
+  
+  xhr.onerror = function() {
+    console.log('There was an error!');
   };
 }
 
