@@ -1,9 +1,16 @@
 function getYAML(url, callback) {
-  $.get(url, function(data){
-      data = yaml.safeLoad(this.response);
-      //data = JSON.parse(this.response);
-      callback(data);
-  })
+  $.ajax({
+    url: url,
+    converters: {
+    	"* text": window.String, 
+    	"text html": true, 
+    	"text json": jQuery.parseJSON, 
+    	"text xml": jQuery.parseXML,
+    	"text xml": jsyaml.load,
+    }
+  }).done(function(data) {
+    callback(data);
+  });
 }
 
 function expTable(data) {
