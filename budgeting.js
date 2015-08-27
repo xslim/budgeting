@@ -29,11 +29,16 @@
       }
     };
 
-    Budgeting.prototype.fill_expense = function (key, amount, desc) {
+    Budgeting.prototype.fill_expense = function (key, amount, date, title, desc) {
       amount = Math.abs(amount);
       var total = +(this.expenses[key] + amount).toFixed(2);
       this.expenses[key] = total;
-      this.expenseDetails[key].push([amount,  desc]);
+      this.expenseDetails[key].push({
+        date: date,
+        amount: amount,
+        title: title,
+        desc: desc
+      });
     };
 
     Budgeting.prototype.parse_data_line = function (line) {
@@ -42,6 +47,7 @@
         return;
       }
 
+      var date = line[2];
       var amount = line[6];
       var desc   = line[7];
 
@@ -50,20 +56,20 @@
 
       // incoming
       if (amount > 0) {
-        this.fill_expense('incoming', amount, desc);
+        this.fill_expense('incoming', amount, date, null, desc);
         return;
       }
 
       for (var key in this.matches_reg) {
         var match = desc.match(this.matches_reg[key]);
         if (match != null) {
-          this.fill_expense(key, amount, match[0]);
+          this.fill_expense(key, amount, date, match[0], desc);
           return;
         }
       }
 
       // unmatched
-      this.fill_expense('unknown', amount, desc);
+      this.fill_expense('unknown', amount, date, null, desc);
     }
 
     Budgeting.prototype.parseData = function (text, delimiter) {

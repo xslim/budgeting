@@ -38,15 +38,17 @@ function expDetailTable(key, data) {
     var body = '';
     body += '<table class="table">';
     body += '<thead><tr>';
-    body += '<th>Amount</th><th>Description</th>';
+    body += '<th>Date</th><th>Amount</th><th>Description</th>';
     body += '</tr></thead><tbody>';
 
     for (var i=0; i<data.length; i++) {
-      var amount = data[i][0];
-      var desc   = data[i][1];
       body += '<tr>';
-      body += '<td>'+ amount +'</td>';
-      body += '<td>'+ desc +'</td>';
+      body += '<td>'+ data[i].date +'</td>';
+      body += '<td>'+ data[i].amount +'</td>';
+      body += '<td>';
+      if (data[i].title) body += data[i].title +'<br />';
+      body += '<i><small>'+ data[i].desc +'</small></i>';
+      body += '</td>';
       body += '</tr>';
     }
     body += '</tbody></table>';
