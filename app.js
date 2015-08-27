@@ -1,6 +1,7 @@
 function getYAML(url, callback) {
   $.ajax({
     url: url,
+    dataType: "json yaml xml",
     converters: {
     	"* text": window.String, 
     	"text html": true, 
