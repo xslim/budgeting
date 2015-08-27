@@ -10,7 +10,7 @@ function getJSON(url, callback) {
       // We reached our target server, but it returned an error
     }
   };
-
+}
 
 function expTable(data) {
     var body = '';
@@ -103,7 +103,7 @@ $( document ).ready(function() {
       var button = $(event.relatedTarget); // Button that triggered the modal
       var key = button.data('cat');
       var modal = $(this);
-	     updateCatModal(modal, key, budget);
+      updateCatModal(modal, key, budget);
     })
     console.log("v"+budget.version);
 });
