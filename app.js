@@ -3,7 +3,6 @@ function getYAML(url, callback) {
     url: url,
     dataType: "text",
     converters: {
-    	"* text": window.String, 
     	"text json": function(value){
     	  return jQuery.parseJSON(value);
     	},
