@@ -8,9 +8,12 @@ function getYAML(url, callback) {
       "text yaml": function(value){
         return jsyaml.safeLoad(value);
       },
-    	"yaml json": function(value){
-    	  return jsyaml.safeLoad(value);
-    	},
+      "text plain": function(value){
+        return jsyaml.safeLoad(value);
+      },
+      "yaml json": function(value){
+        return jsyaml.safeLoad(value);
+      },
     }
   }).done(function(data) {
     callback(data);
